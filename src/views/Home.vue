@@ -30,7 +30,7 @@ export default {
   },
   methods: {
     async getTodo() {
-      const resData = await axios.get("http://127.0.0.1:8000/api/todolists/");
+      const resData = await axios.get("https://stark-refuge-16364.herokuapp.com/api/todolists");
       this.todoLists = resData.data.data;
       this.newTodo = "";
     },
@@ -38,18 +38,18 @@ export default {
       const sendData = {
         todo: this.newTodo
       };
-      await axios.post("http://127.0.0.1:8000/api/todolists/", sendData);
+      await axios.post("https://stark-refuge-16364.herokuapp.com/api/todolists/", sendData);
       await this.getTodo();
     },
     async updateTodo(id, todo) {
       const sendData = {
         todo: todo,
       };
-      await axios.put("http://127.0.0.1:8000/api/todolists/" + id, sendData);
+      await axios.put("https://stark-refuge-16364.herokuapp.com/api/todolists/" + id, sendData);
       await this.getTodo();
     },
     async deleteTodo(id) {
-      await axios.delete("http://127.0.0.1:8000/api/todolists/" + id);
+      await axios.delete("https://stark-refuge-16364.herokuapp.com/api/todolists/" + id);
       await this.getTodo();
     },
   },
