@@ -38,7 +38,7 @@ export default {
       const sendData = {
         todo: this.newTodo
       };
-      await axios.post("https://stark-refuge-16364.herokuapp.com/api/todolists/", sendData);
+      await axios.post("https://stark-refuge-16364.herokuapp.com/api/todolists", sendData);
       await this.getTodo();
     },
     async updateTodo(id, todo) {
